@@ -6,6 +6,12 @@
   <%= image_tag(@photo.img_url) %>	
 </td>
 <p>
+  Tags:
+  <% @photo.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+<p>
 	<%= link_to "edit", edit_photo_path(@photo) %>
 </p>
 <p>

@@ -1,0 +1,14 @@
+<h1>Photos Tagged with <%= @tag.name %></h1>
+
+<ul>
+  <% @tag.photos.each do |photo| %>
+    <li><%= link_to photo.title, photo_path(photo) %></li>
+    <%= image_tag(photo.img_url) %>
+  <% end %>
+</ul>
+<p>
+	<%= link_to "<< Back to Photos List", photos_path %>
+</p>
+<p>
+	<%= link_to "<< Back to Tags List", tags_path %>
+</p>
