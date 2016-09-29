@@ -11,12 +11,22 @@ class PhotosController < ApplicationController
 		@photo = Photo.new
 	end
 	
-	def create
-  	@photo = Photo.new(photo_params)
+  def create
+    @photo = Photo.new(photo_params)
 
-  	@photo.save
-  	redirect_to photos_path(@photo)
-	end	
+    respond_to do |format|
+      if @photo.save
+        format.html { redirect_to @photo,
+          notice: 'Photo was successfully created.' }
+        format.json { render :show, status: :created,
+          location: @photo }
+      else
+        format.html { render :new }
+        format.json { render json: @photo.errors,
+          status: :unprocessable_entity }
+      end
+    end
+  end	
 
 	def edit
   	@photo = Photo.find(params[:id])
@@ -24,16 +34,25 @@ class PhotosController < ApplicationController
 
 	def update
   	@photo = Photo.find(params[:id])
-  	@photo.update(photo_params)
-
-  	redirect_to photos_path(@photo)
+  	respond_to do |format|
+      if @photo.update(photo_params)
+        format.html { redirect_to @photo,
+          notice: 'Photo was successfully updated.' }
+        format.json { render :show, status: :ok, location: @photo }
+      else
+        format.html { render :edit }
+        format.json { render json: @photo.errors,
+          status: :unprocessable_entity }
+      end
+    end
 	end
 
 	def destroy
     @photo = Photo.find(params[:id])
   	@photo.destroy
  	  respond_to do |format|
-      format.html { redirect_to photos_url }
+      format.html { redirect_to photos_url,
+      	notice: 'Photo was successfully destroyed.' }
       format.json { head :no_content }
     end
   end 

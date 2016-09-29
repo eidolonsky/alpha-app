@@ -1,6 +1,6 @@
 class Photo < ApplicationRecord
 	validates :title, :img_url, presence: true
-	validates :title, :img_url, uniqueness: true
+	validates :title, uniqueness: true
 	validates :img_url, allow_blank: true, format: { 
 		with: %r{\.(gif|jpg|png)\Z}i, 
 		message: 'must be a URL for GIF, JPG or PNG image.'
