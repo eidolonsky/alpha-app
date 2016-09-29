@@ -3,7 +3,7 @@
 	<%= @photo.description %>
 </p>
 <td>
-  <%= image_tag(@photo.img_url.to_s) %>	
+  <%= image_tag(@photo.img_url) %>	
 </td>
 <p>
 	<%= link_to "edit", edit_photo_path(@photo) %>
