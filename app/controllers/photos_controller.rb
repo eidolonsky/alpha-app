@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
   	@photo = Photo.new(photo_params)
 
   	@photo.save
-  	redirect_to photo_path(@photo)
+  	redirect_to photos_path(@photo)
 	end	
 
 	def edit
@@ -26,7 +26,7 @@ class PhotosController < ApplicationController
   	@photo = Photo.find(params[:id])
   	@photo.update(photo_params)
 
-  	redirect_to photo_path(@photo)
+  	redirect_to photos_path(@photo)
 	end
 
 	def destroy
