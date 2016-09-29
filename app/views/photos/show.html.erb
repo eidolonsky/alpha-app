@@ -1,3 +1,7 @@
 <h1><%= @photo.title %></h1>
-<p><%= @photo.body %></p>
+<h1><%= @photo.description %></h1>
+<p><%= @photo.description %></p>
+<td>
+  <%= image_tag(@photo.img_url.to_s) %>	
+</td>
 <%= link_to "<< Back to Photos List", photos_path %>

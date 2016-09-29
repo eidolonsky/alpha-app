@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 20160928233120) do
 
   create_table "photos", force: :cascade do |t|
     t.string   "title"
-    t.text     "decription"
+    t.text     "description"
     t.string   "img_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
