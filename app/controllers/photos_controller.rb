@@ -14,6 +14,8 @@ class PhotosController < ApplicationController
 	def create
 		@photo = Photo.new
   	@photo.title = params[:photo][:title]
+  	@photo.description = params[:photo][:description]
+  	@photo.img_url = params[:photo][:img_url]
   	@photo.save
   	redirect_to photo_path(@photo)
 	end	
