@@ -1,0 +1,11 @@
+<h1>All Photos</h1>
+
+<ul id="photos">
+  <% @photos.each do |photo| %>
+    <li>
+      <%= link_to photo.title, photo_path(photo) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a New Photo", new_photo_path, class: "new_photo" %>

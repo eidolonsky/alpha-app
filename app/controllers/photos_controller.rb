@@ -1,4 +1,10 @@
 class PhotosController < ApplicationController
 	def index
-		@photos = photo.all
+		@photos = Photo.all
+	end
+	
+	def show
+		@photo = Photo.find(params[:id])
+	end
+
 end
