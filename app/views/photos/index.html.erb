@@ -5,6 +5,7 @@
     <li>
       <%= link_to photo.title, photo_path(photo) %>
     </li>
+ 		 <%= image_tag(photo.img_url.to_s) %>	
   <% end %>
 </ul>
 

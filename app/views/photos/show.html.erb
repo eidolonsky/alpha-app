@@ -1,6 +1,16 @@
 <h1><%= @photo.title %></h1>
-<p><%= @photo.description %></p>
+<p>
+	<%= @photo.description %>
+</p>
 <td>
   <%= image_tag(@photo.img_url.to_s) %>	
 </td>
-<p><%= link_to "<< Back to Photos List", photos_path %></p>
+<p>
+	<%= link_to "edit", edit_photo_path(@photo) %>
+</p>
+<p>
+	<%= link_to "delete", photo_path(@photo), method: :delete, data: {confirm: "Are you sure?"} %>
+</p>
+<p>
+	<%= link_to "<< Back to Photos List", photos_path %>
+</p>

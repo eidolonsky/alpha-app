@@ -12,11 +12,24 @@ class PhotosController < ApplicationController
 	end
 	
 	def create
-		@photo = Photo.new
-  	@photo.title = params[:photo][:title]
-  	@photo.description = params[:photo][:description]
-  	@photo.img_url = params[:photo][:img_url]
+  	@photo = Photo.new(photo_params)
+
   	@photo.save
   	redirect_to photo_path(@photo)
 	end	
+
+	def destroy
+    @photo = Photo.find(params[:id])
+  	@photo.destroy
+ 	  respond_to do |format|
+      format.html { redirect_to photos_url }
+      format.json { head :no_content }
+    end
+  end 
+
+  private
+
+  def photo_params
+  	params.require(:photo).permit(:title, :description, :img_url)
+	end
 end
