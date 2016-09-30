@@ -1,0 +1,26 @@
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+%h1.newh1= @photo.title
+%nav
+  %ul.topnav
+    %li.to_new
+      = link_to "New Photo", new_photo_path, class: "new_photo"
+    %li.to_photo
+      = link_to "Photos", photos_path
+    %li.to_tag
+      = link_to "Tags", tags_path
+.buttonbox
+  .buttons
+    = link_to "Edit", edit_photo_path(@photo)
+  .buttons
+    = link_to "Delete", photo_path(@photo), method: :delete, data: {confirm: "Are you sure?"}
+#photos.tilebox
+  #showp.tiles
+    .photoimg
+      = image_tag(@photo.img_url)
+    .photodesc
+      %p
+        = @photo.description
+    .phototag
+      Tags:
+      - @photo.tags.each do |tag|
+        = link_to tag.name, tag_path(tag)
