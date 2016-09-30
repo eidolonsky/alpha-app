@@ -3,7 +3,7 @@
 <nav>
 	<ul class="topnav">		
 		<li class="to_new">
-			<%= link_to "Create a New Photo", new_photo_path, class: "new_photo" %>
+			<%= link_to "New Photo", new_photo_path, class: "new_photo" %>
 		</li>
 		<li class="to_photo">
 			<%= link_to "Photos List", photos_path %>
@@ -14,19 +14,23 @@
 	</ul>
 </nav>
 
+<ul class="tilebox" id="photos">
+  <div class="tiles">
+    <div class="photoimg">
+    	<%= image_tag(@photo.img_url) %>
+    </div>
+    <li class="photodesc">
+			<%= @photo.description %>
+    </li>
+		<div class="phototag">
+			Tags: 
+			<% @photo.tags.each do |tag| %>
+			<%= link_to tag.name, tag_path(tag) %>
+	    <% end %>
+	  </div>	
+	</div>
+</ul>
 
-<div>
-  <%= image_tag(@photo.img_url) %>	
-</div>
-<p>
-	<%= @photo.description %>
-</p>
-<p>
-  Tags:
-  <% @photo.tags.each do |tag| %>
-    <%= link_to tag.name, tag_path(tag) %>
-  <% end %>
-</p>
 <p>
 	<%= link_to "edit", edit_photo_path(@photo) %>
 </p>

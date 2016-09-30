@@ -3,10 +3,13 @@
 <nav>
 	<ul class="topnav">		
 		<li class="to_new">
-			<%= link_to "Create a New Photo", new_photo_path, class: "new_photo" %>
+			<%= link_to "New Photo", new_photo_path, class: "new_photo" %>
 		</li>
 		<li class="to_photo">
 			<%= link_to "Photos List", photos_path %>
+		</li>
+		<li class="to_tag">
+			<%= link_to "Tags List", tags_path %>
 		</li>
 	</ul>
 </nav>
