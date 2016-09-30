@@ -1,3 +1,14 @@
+<nav>
+  <ul class="topnav">   
+    <li class="to_photo">
+      <%= link_to "Photos List", photos_path %>
+    </li>
+    <li class="to_tag">
+      <%= link_to "Tags List", tags_path %>
+    </li>
+  </ul>
+</nav>
+
 <%= form_for(@photo) do |f| %>
   <div class="form">
     <ul class="errors">

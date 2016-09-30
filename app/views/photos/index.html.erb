@@ -1,15 +1,25 @@
-<h1>All Photos</h1>
+<h1 class="newh1">Photos</h1>
+
+<nav>
+	<ul class="topnav">		
+		<li class="to_new">
+			<%= link_to "Create a New Photo", new_photo_path, class: "new_photo" %>
+		</li>
+		<li class="to_tag">
+			<%= link_to "Tags List", tags_path %>
+		</li>
+	</ul>
+</nav>	
 
 <ul id="photos">
-  <% @photos.each do |photo| %>
-    <li>
-      <%= link_to photo.title, photo_path(photo) %>
-    </li>
- 		 <%= image_tag(photo.img_url) %>	
+  <% @photos.each do |photo| %> 
+    <div class="tiles">
+	    <div class="photoimg">
+	    	<%= image_tag(photo.img_url) %>
+	    </div>
+	    <li class="phototitle">
+	      <%= link_to photo.title, photo_path(photo) %>
+	    </li>
+		</div>
   <% end %>
 </ul>
-
-<%= link_to "Create a New Photo", new_photo_path, class: "new_photo" %>
-<p>
-	<%= link_to "Go to Tags List", tags_path %>
-</p>
