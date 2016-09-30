@@ -101,17 +101,68 @@ ul.topnav li a {
 ul.topnav li a:hover {background-color: #555;}
 
 /*photos*/
+.tilebox {
+	display: flex;
+	padding-top: 1.333em;
+	flex-wrap: wrap;
+	justify-content: center;
+}
 .tiles {
 	padding: 1em;
-	margin-top: 1.333em;
 	width: 10em;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 1.777em;
   box-shadow: 0 0.125em 0.125em 0.0625em #888888;
+  margin: 1em;
 }
 
 .tiles img {
 	width: 10em;
 	height: auto;
+}
+
+/*show*/
+.buttonbox {
+	display: flex;
+	justify-content: center;
+}
+
+.buttons {
+	margin-top: 1em;
+	margin-right: 1em;
+	margin-left: 1em;
+	font-size: 1.222em;
+}
+
+/*tagshow*/
+.tagbox {
+	display: flex;
+	justify-content: center;
+}
+
+.tags {
+	margin-top: 1em;
+	margin-right: 1em;
+	margin-left: 1em;
+	font-size: 1.222em;
+}
+
+/*links*/
+a:link {
+  color: #202C39;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #202C39;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #46494C;
+  text-decoration: none;
+}
+
+a:active {
+  color: #46494C;
+  text-decoration: none;
 }

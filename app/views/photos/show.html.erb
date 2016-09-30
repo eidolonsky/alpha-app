@@ -14,14 +14,23 @@
 	</ul>
 </nav>
 
-<ul class="tilebox" id="photos">
+<div class="buttonbox">
+	<div class="buttons">
+		<%= link_to "Edit", edit_photo_path(@photo) %>
+	</div>
+	<div class="buttons">
+		<%= link_to "Delete", photo_path(@photo), method: :delete, data: {confirm: "Are you sure?"} %>
+	</div>
+</div>
+
+<div class="tilebox" id="photos">
   <div class="tiles">
     <div class="photoimg">
     	<%= image_tag(@photo.img_url) %>
     </div>
-    <li class="photodesc">
+    <div class="photodesc">
 			<%= @photo.description %>
-    </li>
+    </div>
 		<div class="phototag">
 			Tags: 
 			<% @photo.tags.each do |tag| %>
@@ -29,14 +38,5 @@
 	    <% end %>
 	  </div>	
 	</div>
-</ul>
+</div>
 
-<p>
-	<%= link_to "edit", edit_photo_path(@photo) %>
-</p>
-<p>
-	<%= link_to "delete", photo_path(@photo), method: :delete, data: {confirm: "Are you sure?"} %>
-</p>
-<p>
-	<%= link_to "<< Back to Photos List", photos_path %>
-</p>

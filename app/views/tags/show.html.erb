@@ -14,15 +14,15 @@
 	</ul>
 </nav>
 
-<ul class="tilebox" id="photos">
+<div class="tilebox" id="photos">
   <% @tag.photos.each do |photo| %>
     <div class="tiles">
 	    <div class="photoimg">
 	    	<%= image_tag(photo.img_url) %>
 	    </div>
-	    <li class="phototitle">
+	    <div class="phototitle">
 	      <%= link_to photo.title, photo_path(photo) %>
-	    </li>
+	    </div>
 		</div>
   <% end %>
-</ul>
+</div>

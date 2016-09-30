@@ -14,10 +14,10 @@
 	</ul>
 </nav>
 
-<ul id="tags">
+<div class="tagbox" id="tags">
   <% @tags.each do |tag| %>
-    <li>
+    <div class="tags">
       <%= link_to tag.name, tag_path(tag) %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
