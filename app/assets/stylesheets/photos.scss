@@ -110,9 +110,11 @@ ul.topnav li a:hover {background-color: #555;}
 .tiles {
 	padding: 1em;
 	width: 10em;
+	height: 10em;
   font-size: 1.777em;
   box-shadow: 0 0.125em 0.125em 0.0625em #888888;
   margin: 1em;
+  position: relative;
 }
 
 .tiles img {
@@ -120,6 +122,11 @@ ul.topnav li a:hover {background-color: #555;}
 	height: auto;
 }
 
+.phototitle {
+	bottom: 0;
+	position: absolute;
+	margin-bottom: 0.222em;
+}
 /*show*/
 .buttonbox {
 	display: flex;
@@ -137,6 +144,10 @@ ul.topnav li a:hover {background-color: #555;}
 	margin-bottom: 1em;
 }
 
+#showp {
+	height: auto;
+}
+
 /*tagshow*/
 .tagbox {
 	display: flex;
@@ -150,6 +161,11 @@ ul.topnav li a:hover {background-color: #555;}
 	font-size: 1.222em;
 }
 
+.phototag {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 0.333em;
+}
 /*links*/
 a:link {
   color: #202C39;
