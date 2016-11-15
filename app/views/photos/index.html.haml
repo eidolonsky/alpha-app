@@ -1,4 +1,5 @@
 !!!
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
 %h1.newh1 Photos
 .container
   - flash.each do |key, value|
@@ -7,7 +8,7 @@
   = yield
 
 %nav
-  %ul.topnav
+  %ul#myTopnav.topnav
     %li.to_new
       = link_to "New Photo", new_photo_path, class: "new_photo"
     %li.to_photo
@@ -16,9 +17,12 @@
       = link_to "Tags", tags_path
     %li.to_log
       = link_to "Twitter", '/auth/twitter'
-
+    %li.to_log
+      = link_to 'Google', '/auth/google'
     %li.log_out
-      = link_to "Log out", logout_path, method: :delete      
+      = link_to "Log out", logout_path, method: :delete  
+    %li.icon
+      %a{:href => "javascript:void(0);", :onclick => "myFunction()"} &#9776        
 #photos.tilebox
   - @photos.each do |photo|
     .tiles
