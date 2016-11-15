@@ -1,13 +1,16 @@
 !!!
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
 %h1.newh1= @photo.title
 %nav
-  %ul.topnav
+  %ul#myTopnav.topnav
     %li.to_new
       = link_to "New Photo", new_photo_path, class: "new_photo"
     %li.to_photo
       = link_to "Photos", photos_path
     %li.to_tag
       = link_to "Tags", tags_path
+    %li.icon
+      %a{:href => "javascript:void(0);", :onclick => "myFunction()"} &#9776        
 .buttonbox
   .buttons
     = link_to "Edit", edit_photo_path(@photo)
