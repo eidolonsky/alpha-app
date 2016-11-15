@@ -161,67 +161,41 @@ a {
 		text-decoration: none;
 	}
 }
-@media screen and(min-width: 50em) {
-	.newh1 {
-		padding-top: 0.666em;
-		font-size: 3.666em;
-		text-align: center;
-	}
-	.form {
-		margin-top: 1.333em;
-	}
-	.actions {
-		padding-left: 0.133em;
-		padding-top: 0.333em;
-		font-size: 1.333em;
-	}
+
+.actions {
+	padding-left: 0.133em;
+	padding-top: 0.333em;
+	font-size: 1.333em;
 }
 .actions input {
-	padding-left: 0.133em;
-	font-size: 0.5em;
+padding-left: 0.133em;
+font-size: 0.5em;
 }
 /* nav start */
 ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #000000;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #000000;
 }
 ul.topnav li {
-  float: left;
+float: left;
 }
 ul.topnav li a {
-    display: inline-block;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 0.333em 0.333em;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 1.777em;
+  display: inline-block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0.333em 0.333em;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1.777em;
 }
 ul.topnav li a:hover {background-color: #555;}
 ul.topnav li.icon {display: none;}
 
 @media screen and (max-width: 35em) {
   /* nav start */
-  ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000000;
-  }
-  ul.topnav li a {
-      display: inline-block;
-      color: #f2f2f2;
-      text-align: center;
-      text-decoration: none;
-      transition: 0.3s;
-      padding: 14px 16px;
-      font-size: 17px;
-  }
-  ul.topnav li {float: left;}
   ul.topnav li:not(:first-child) {display: none;}
   ul.topnav li.icon {
     float: right;
